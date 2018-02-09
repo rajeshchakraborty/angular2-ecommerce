@@ -1,0 +1,15 @@
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+    <div class="panel-body">
+            <div class="card-body">
+                    <h4 class="card-title">{{product.ProductName}}</h4>
+                    <span>{{product.ProductCode}}</span>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                    <p>{{product.Price | currency }}</p>
+                  </div>
+        <button class="btn btn-primary" (click)="onBack()">Back</button>
+    </div>
+</div>

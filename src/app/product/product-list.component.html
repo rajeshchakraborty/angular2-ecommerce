@@ -1,0 +1,52 @@
+
+
+  <div class="container head_form_sec">
+    <h1 class="header_text">
+        Book unique and experiences all over the world.
+    </h1>
+    <div class="_fromSec">
+        <form class="form-sec">
+            <div class="sec-a">
+                <div class="sec-a-1">
+                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </div>
+                <div class="sec-a-2">
+                    <input [(ngModel)]='filterList'  type="text" class="_input_text" placeholder="Try" value="">
+                </div>
+            </div>
+            <div class="sec-b">
+                <button type="submit" class="_submit"><span>Search</span></button>
+            </div>
+        </form>       
+    </div>
+</div>
+<div class="image-section">
+    <section class="container" ng-controller="homeController">
+        <div class="col-md-12 auto">
+            <h2>{{pageTitle}}</h2>
+        </div>
+        <section class="row" *ngIf='procucts && procucts.length'>
+            <div class="col-sm-6 col-md-3" *ngFor = "let product of procucts | ProductFilter : filterList">
+                <div class="imageBox">
+                    <img class="img-responsive" *ngIf="showImage" [src]='product.ImageUrl' 
+                    [title]='product.ProductId'
+                    [style.margin-bottom.px] ='imageMargin' 
+                    >
+                    <div class="content-box">
+                        <div class="name">{{product.ProductName}}</div>
+
+                        <p class="sub">Fri, 9 Feb , 9:00AM and more dates
+                                Aapno Ghar Amusement And Water Park , Delhi</p>
+                        <div class="price">{{product.Price | currency }}</div>
+
+                        <div class="btn-sec">           
+                        <a class="btn" [routerLink]="['/product', product.ProductId]">View details</a>
+                        </div>
+
+                        <div><ai-star [rating]='product.StarRating' (ratingClicked)='OnRatingClicked($event)'></ai-star></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
