@@ -30,8 +30,8 @@ import { ProductDetailsComponent } from './product/product-details.component';
       { path : 'products', component : ProductListComponent },
       { path : 'product/:id', component: ProductDetailsComponent },
       { path : 'home' , component : WelcomeComponent },
-      { path : '', redirectTo : 'home' , pathMatch: 'full' },
-      { path : '**', redirectTo : 'home', pathMatch: 'full'}
+      { path : '', redirectTo : 'products' , pathMatch: 'full' },
+      { path : '**', redirectTo : 'products', pathMatch: 'full'}
 
     ]) 
   ],
